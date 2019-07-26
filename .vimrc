@@ -59,7 +59,7 @@ set hlsearch
 set incsearch " Search as characters are entered
 set cindent
 set shiftwidth=4
-set timeoutlen=100 ttimeoutlen=0
+set timeoutlen=120 ttimeoutlen=0
 set autochdir
 " Everything Underneath this line is from C.Vim
 set cmdheight=2
@@ -108,7 +108,7 @@ highlight NonText guibg=Grey11
 
 "Everything under here are my personal shortcuts
 
-inoremap { {<cr><bs>}<esc>ko
+inoremap P{ {<cr><bs>}<esc>ko
 inoremap jk <esc>
 nmap <CR> i<CR><bs><esc>
 nmap <S-CR> i<CR><bs><esc>J
