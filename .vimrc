@@ -59,7 +59,7 @@ set hlsearch
 set incsearch " Search as characters are entered
 set cindent
 set shiftwidth=4
-set timeoutlen=100 ttimeoutlen=0
+set timeoutlen=130 ttimeoutlen=0
 set autochdir
 " Everything Underneath this line is from C.Vim
 set cmdheight=2
@@ -93,6 +93,7 @@ nmap <s-right> <c-w>l
 inoremap <C-Esc> :close<CR>
 noremap <S-j> jzz
 noremap <S-k> kzz
+noremap ,h :nohlsearch<CR>
 " nnoremap <C-q> :wqall<CR>
 
 highlight Cursor guibg=#00dddd
@@ -108,7 +109,7 @@ highlight NonText guibg=Grey11
 
 "Everything under here are my personal shortcuts
 
-inoremap { {<cr><bs>}<esc>ko
+inoremap P{ {<cr><bs>}<esc>ko
 inoremap jk <esc>
 nmap <CR> i<CR><bs><esc>
 nmap <S-CR> i<CR><bs><esc>J
