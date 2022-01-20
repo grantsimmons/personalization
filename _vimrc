@@ -86,25 +86,29 @@ set noerrorbells
 set showmode
 set ruler
 set tabstop=4
+
 if has("gui_running")
-    set bg=dark " Foreground Color
-    colors torte
     set lines=55 columns=168 " USE IN GVIM ONLY    
-    set cursorline " Highlights Cursor Line
-    set colorcolumn=80
-    if has("gui_win32")
-        set guifont=Consolas:h09:cANSI
-        let $PATH.=';C:\Windows\Sysnative'
-        set backupdir=$HOME\vimtmp\backup//
-        set undodir=$HOME\vimtmp\undo//
-        set directory=$HOME\vimtmp\swaps//
-    else
-        set guifont=Consolas\ 11
-        set backupdir=~/vimtmp/backup
-        set undodir=~/vimtmp/undo
-        set directory=~/vimtmp/swaps
-    endif
 endif
+
+if has("gui_win32")
+	set guifont=Consolas:h09:cANSI
+	let $PATH.=';C:\Windows\Sysnative'
+	set backupdir=$HOME\vimtmp\backup//
+	set undodir=$HOME\vimtmp\undo//
+	set directory=$HOME\vimtmp\swaps//
+else
+	set guifont=Consolas\ 11
+	set backupdir=~/vimtmp/backup
+	set undodir=~/vimtmp/undo
+	set directory=~/vimtmp/swaps
+endif
+
+set bg=dark " Foreground Color
+colors torte
+set cursorline " Highlights Cursor Line
+set colorcolumn=80
+
 set wildmenu " Visual Command Autocomplete
 set lazyredraw " ignore redraw during script/macro
 set hlsearch
