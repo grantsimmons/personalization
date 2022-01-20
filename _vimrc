@@ -223,12 +223,12 @@ map ,h :nohlsearch <CR>
 if has("gui_win32")
     map ,q :windo diffthis <CR>
     "Search current dir recursively for word under cursor, highlights verbatim
-    nnoremap <c-f> *# :silent grep! /S <cword> %:p:h\*<CR> :copen<CR>
+    nnoremap <c-f> *# :silent grep! /S <cword> %:p:h\*<CR> :copen<CR> :redr!<CR>
     "Search custom dir for word under cursor
     nnoremap ,f *# :silent grep! /S <c-r>=expand('<cword>')<CR> <c-r>=expand('%:p:h')<CR>\*
 else "Unix, CLI
-    nnoremap <c-f> *# :silent grep! -r <cword> %:p:h\*<CR> :copen<CR>
-    nnoremap ,f *# :silent grep! -r <c-r>=expand('<cword>')<CR> <c-r>=expand('%:p:h')<CR>\*
+    nnoremap <c-f> *# :silent grep! -r <cword> %:p:h/*<CR> :copen<CR> :redr!<CR>
+    nnoremap ,f *# :silent grep! -r <c-r>=expand('<cword>')<CR> <c-r>=expand('%:p:h')<CR>/*
 endif
 nnoremap <s-CR> :cn <CR>
 "Join next line with current
